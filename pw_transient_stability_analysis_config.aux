@@ -1,0 +1,653 @@
+MachineModel_GENROU (BusNum,ID,Status,H,D,Ra,Xd,Xq,Xdp,Xqp,Xdpp,Xl,Tdop,Tqop,Tdopp,Tqopp,S1,S12,RComp,
+   XComp)
+{
+     1 "1" "Active" 4,728 0 0 0,73 0,4845 0,304 0,4845 0,2 0,15 8,96 0,31 0,03 0,05 0 0 0 0
+     2 "1" "Active" 2,56 0 0 2,2395 2,161 0,2995 0,4922 0,225 0,15 6 0,535 0,03 0,05 0 0 0 0
+     3 "1" "Active" 3,01 0 0 1,3125 1,2578 0,1813 0,25 0,15 0,12 5,89 0,6 0,03 0,05 0 0 0 0
+}
+
+Exciter_IEEET1 (BusNum,ID,Status,Tr,Ka,Ta,Vrmax,Vrmin,Ke,Te,Kf,Tf,Switch,E1,SE1,E2,SE2,Spdmlt)
+{
+     1 "1" "Active" 0 20 0,2 3 -3 1 0,314 0,063 0,35 0 2,8 0,30338 3,73 1,2884 0
+     2 "1" "Active" 0 20 0,2 3 -3 1 0,314 0,063 0,35 0 2,8 0,30338 3,73 1,2884 0
+     3 "1" "Active" 0 20 0,2 3 -3 1 0,314 0,063 0,35 0 2,8 0,3034 3,73 1,2884 0
+}
+
+Governor_IEEEG2 (BusNum,ID,Status,K,T1,T2,T3,Pmax,Pmin,T4)
+{
+     1 "1" "Active" 20 20 5 0,5 1 0 0,8
+}
+
+Gen (BusNum,ID,MVABase,GovRespLimit)
+{
+     1 "1" 500 "Normal"   
+     2 "1" 250 "Normal"   
+     3 "1" 100 "Normal"   
+}
+Load (BusNum,ID,LoadModelGroup,TSDistEquiv,TSDistEquivMVABase,TSDistGenMVABase)
+{
+     5 "1 " "" ""    0,000    0,000
+     6 "1 " "" ""    0,000    0,000
+     8 "1 " "" ""    0,000    0,000
+}
+//--------------------------------------------------------------------------------
+// THE FOLLOWING ARE THE TRANSIENT STABILITY OPTIONS
+//--------------------------------------------------------------------------------
+Transient_Options_Value (Option,Value)
+{
+"GLM_AngleAbsDevAction"            "Ignore"
+"GLM_AngleAbsDevTime"              "0"
+"GLM_AngleAbsDevValue"             "180"
+"GLM_BreakerDelayCycles"           "0"
+"GLM_ImpRelayAction"               "Ignore"
+"GLM_ImpRelayFilterName"           ""
+"GLM_ImpRelayReach"                "100"
+"GLM_ImpRelayTime"                 "0,1"
+"GLM_MaxAngleDiff"                 "1080"
+"GLM_OnlyApplyNoRelay"             "YES"
+"GLM_SpeedHighAction"              "Ignore"
+"GLM_SpeedHighTime"                "2"
+"GLM_SpeedHighValue"               "1,02"
+"GLM_SpeedLowAction"               "Ignore"
+"GLM_SpeedLowTime"                 "2"
+"GLM_SpeedLowValue"                "0,97"
+"GNRL_MVABaseforGenInpDisp"        "System"
+"GNRL_ResultsEventsBusID"          "Name"
+"GNRL_RunPropToRealTime"           "NO"
+"GNRL_RunPropToRealTimeMult"       "5"
+"GNRL_ShowResultsPageWhenDone"     "YES"
+"GNRL_TransferResultsManual"       "YES"
+"GNRL_TransferResultsOnEvent"      "YES"
+"GNRL_TransferResultsOnUpdate"     "NO"
+"GNRL_TransferResultsRunUntil"     "YES"
+"GNRL_UpdateDisplay"               "NO"
+"GNRL_UpdateDisplayInterval"       "10"
+"GRNL_Interactive"                 "NO"
+"MANCTRL_NumTimeStep"              "1"
+"MANCTRL_RunUntilTime"             "0"
+"MOD_EventsSplitTimeSteps"         "NO"
+"MOD_ExciterAutoParam"             "GE Approach"
+"MOD_ExciterSaturationModel"       "Quadratic"
+"MOD_FastValvingOption"            "Frequency"
+"MOD_FastValvingParameter"         "0,1"
+"MOD_FreqBusTimeConst"             "0,02"
+"MOD_FreqCalcROCOF"                "NO"
+"MOD_FreqInit"                     "60"
+"MOD_FreqInitFromPlayIn"           "YES"
+"MOD_FreqRelayMinVpu"              "0,3"
+"MOD_GenIgnoreSpeedEffects"        "NO"
+"MOD_GICSolutionOnly"              "NO"
+"MOD_GICTimeDelay"                 "0"
+"MOD_IncludePDCI"                  "YES"
+"MOD_InfiniteBus"                  "None"
+"MOD_InitLimitViolations"          "Modify"
+"MOD_IntegrationMethod"            "RK2"
+"MOD_IslandNewCountBus"            "1"
+"MOD_IslandNewCountGen"            "1"
+"MOD_IslandSyncDegree"             "0"
+"MOD_IslandSyncDegreeOption"       "0"
+"MOD_IslandSyncHz"                 "0"
+"MOD_IslandSyncHzOption"           "2"
+"MOD_LoadCompMinMW"                "0,5"
+"MOD_LoadCompMinPQRatio"           "0,25"
+"MOD_LoadCompMinVpu"               "0"
+"MOD_LoadDistEquivMinKV"           "0"
+"MOD_LoadModelDefault"             "Impedance"
+"MOD_LoadTripExtraVarsComponents"  "YES"
+"MOD_MachineS12LessS10"            "Flip Values"
+"MOD_MotorW"                       "PSLF"
+"MOD_NetworkAbortFailCount"        "10"
+"MOD_NetworkForceUpdateTime"       "0"
+"MOD_NetworkInnerLoopScalar"       "1"
+"MOD_NetworkMaxItr"                "25"
+"MOD_NetworkPUConvergenceTol"      "0,001"
+"MOD_NetworkVoltExtrap"            "YES"
+"MOD_RemedialActionInclude"        "NO"
+"MOD_SatSEOneZero"                 "Normal Curve Fit"
+"MOD_UndocPILimits"                "YES"
+"MOD_UseParallelProcessing"        "NO"
+"RESDISP_GroupBy"                  "Object/Field"
+"RESDISP_UseAreaZone"              "NO"
+"RO_AnalyzeTimeWindows"            "NO"
+"RO_AngleRefGenID"                 "1"
+"RO_AngleRefGenNum"                "1"
+"RO_AngleRefInitAtZero"            "NO"
+"RO_AngleRefOption"                "Average"
+"RO_DoNotStoreDetails"             "NO"
+"RO_DoNotStoreEvents"              "NO"
+"RO_EventsReportDSUser"            "Both Log and Event"
+"RO_EventsReportModelTrip"         "Both Log and Event"
+"RO_EventsReportRelayTrip"         "Both Log and Event"
+"RO_EventsReportRemedialAction"    "Both Log and Event"
+"RO_EventsReportTransition"        "Both Log and Event"
+"RO_MonitorStart"                  "After Last Event"
+"RO_MonitorStartLastEventTime"     "0"
+"RO_MonitorStartTime"              "0"
+"RO_SaveMinMaxStart"               "After Last Event"
+"RO_SaveMinMaxStartTime"           "0"
+"RSHD_ArchiveAuto"                 "NO"
+"RSHD_ArchiveMaxNum"               "6"
+"RSHD_Directory"                   ""
+"RSHD_IncArea"                     "NO"
+"RSHD_IncBranch"                   "NO"
+"RSHD_IncBus"                      "YES"
+"RSHD_IncBusPair"                  "NO"
+"RSHD_IncDCLine"                   "NO"
+"RSHD_IncGen"                      "YES"
+"RSHD_IncInjectionGroup"           "NO"
+"RSHD_IncInterface"                "NO"
+"RSHD_IncLineShunt"                "NO"
+"RSHD_IncLoad"                     "NO"
+"RSHD_IncMeasurementModel"         "NO"
+"RSHD_IncModelExpression"          "NO"
+"RSHD_IncModelPlane"               "NO"
+"RSHD_IncMTDCConverter"            "YES"
+"RSHD_IncMultiterminalDC"          "YES"
+"RSHD_IncShunt"                    "YES"
+"RSHD_IncSubstation"               "NO"
+"RSHD_IncSystem"                   "NO"
+"RSHD_IncTransformer"              "NO"
+"RSHD_IncVSCDCLine"                "YES"
+"RSHD_IncZone"                     "NO"
+"RSHD_StoreInput"                  "YES"
+"RSHD_StoreOther"                  "YES"
+"RSHD_StoreStates"                 "NO"
+"RSHD_UseAreaZone"                 "NO"
+"RS_DoNotCombineRAMWithHD"         "NO"
+"RS_SaveMinMaxinPWB"               "YES"
+"RS_SaveOpenDevices"               "NO"
+"RS_SavePowerFlowState"            "NO"
+"RS_SaveRAMinPWB"                  "NO"
+"RS_SaveXTimeSteps"                "1"
+"RS_StoreHD"                       "NO"
+"RS_StoreRAM"                      "YES"
+"VAL_DeltaTimeStep"                "2"
+"VAL_UnsupportedModels"            "Error"
+}
+
+//--------------------------------------------------------------------------------
+// THE FOLLOWING ARE THE TRANSIENT LIMIT MONITORING
+//--------------------------------------------------------------------------------
+TSLimitMonitor (Name,LogicVariable,Active,CategoryList,Abort,AbortTime,MaxViolStore,SeveritySort,
+   ObjectType,Field,Filter,LimitValue,LimitDuration,LimitSide,LimitValueType,
+   LimitValueAbs,CumulativeTime,StopValueBelowUse,StopValueBelow,
+   StartValueBelowUse,StartValueBelow,StopValueAboveUse,StopValueAbove,
+   StartValueAboveUse,StartValueAbove,MonitorStart,MonitorStartLastEventTime,
+   MonitorStartTime,MonitorStop,MonitorStopDuration,MonitorStopTime,
+   DataMaintainerAssign)
+{
+"WECC Category B Voltage Dip Non-Load Bus" "" "NO " "" "Log" 0 100 "ValueTime" "Bus" "TSVpu" "Non-Load Only" -30 0 "Lower" "Percent Deviation" "NO " "NO " "NO " 0 "NO " 0 "NO " 0 "NO " 0 "Default to Global Option" 0 0 "Never" 0 0 ""
+"WECC Category B Voltage Dip Load Bus" "" "NO " "" "Log" 0 100 "ValueTime" "Bus" "TSVpu" "Load Only" -25 0 "Lower" "Percent Deviation" "NO " "NO " "NO " 0 "NO " 0 "NO " 0 "NO " 0 "Default to Global Option" 0 0 "Never" 0 0 ""
+"WECC Category B Voltage Dip Load Bus Duration" "" "NO " "" "Log" 0 100 "ValueTime" "Bus" "TSVpu" "Load Only" -20 0,333 "Lower" "Percent Deviation" "NO " "NO " "NO " 0 "NO " 0 "NO " 0 "NO " 0 "Default to Global Option" 0 0 "Never" 0 0 ""
+"WECC Category B Frequency" "" "NO " "" "Log" 0 100 "ValueTime" "Bus" "TSFrequency" "Load Only" 59,6 0,1 "Lower" "Actual" "NO " "NO " "NO " 0 "NO " 0 "NO " 0 "NO " 0 "Default to Global Option" 0 0 "Never" 0 0 ""
+}
+
+//--------------------------------------------------------------------------------
+// THE FOLLOWING DESCRIBES THE TRANSIENT CONTINGENCIES
+//--------------------------------------------------------------------------------
+TSContingency (Name,Category,ResultFileName,ResultDirectory,TimeStart,TimeEnd,TimeStepUseCycles,
+   TimeStep,Skip,RemedialActionInclude,Processed,Solved,SolvedReason,Violations,
+   LoadMWTripped,LoadRelayMWTripped,LoadModelMWTripped,GenMWTripped,
+   LoadMWIslanded,GenMWIslanded,PlotVisible,PlotColor,PlotThickness,PlotDashed,
+   PlotSymbol,DataMaintainerAssign)
+{
+"+12% load @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 255 Default "Default" "Triangle" ""
+"23 MW S-LAA" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"23 MW Static Injection" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"10 MW Alternating" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+12% load evenly distributed" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+12% load @ 5" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 33023 Default "Default" "Diamond" ""
+"+9.4 % @ 5" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 33023 Default "Default" "Diamond" ""
+"+9.4% @ 6" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 32768 Default "Default" "Circle" ""
+"+9.4% @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 32768 Default "Default" "Circle" ""
+"+8% @ 5" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 33023 Default "Default" "Diamond" ""
+"+8% @ 6" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 32768 Default "Default" "Diamond" ""
+"+8% @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 33023 Default "Default" "Diamond" ""
+"+12% load @ 6" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " 32768 Default "Default" "Circle" ""
+"+12% load @ 0.66@6 and 0.33@8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Circle" ""
+"+12% load @ 0.33@6 and 0.66@8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Circle" ""
+"+12% load @ 0.1@6 and 0.9@8" "" "" ""  0,000 30,000 "NO "  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Diamond" ""
+"+-8% Load t=2 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=4 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=5 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=6 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=7 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=8 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=9 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=10 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=11 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=12 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=13 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=14 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=15 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=16 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=17 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=18 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=19 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=20 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=3 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=2 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=4 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=5 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=6 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=7 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=8 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=9 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=10 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=11 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=12 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=13 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=14 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=15 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=16 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=17 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=18 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=19 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"-+8% Load t=20 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+-8% Load t=3 @ 8" "" "" ""  0,000 30,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+2.8% - Static LCA" "" "" ""  0,000 30,000 "YES"  0,250 "NO " "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "YES" 255 Default "Default" "Circle" ""
+"Load-Injection--Alternating_v1_delta8" "" "" ""  0,000 120,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Circle" ""
+"Load-Injection-Alternating_v1_delta16" "" "" ""  0,000 120,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Diamond" ""
+"Load-Injection-Alternating_v1_delta4" "" "" ""  0,000 120,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Triangle" ""
+"Load-Alternating-v1-delta16" "" "" ""  0,000 200,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"Load-Alternating-v1-delta8" "" "" ""  0,000 200,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"Load-Alternating-v1-delta4" "" "" ""  0,000 200,000 "YES"  0,250 "YES" "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "NO " -1 Default "Default" "Default" ""
+"+7% - Static LCA" "" "" ""  0,000 30,000 "YES"  0,250 "NO " "YES" "YES" "YES" "" 0  0,000  0,000  0,000  0,000  0,000  0,000 "YES" 32768 Default "Default" "Triangle" ""
+}
+
+TSContingencyElement (Contingency,Time,Object,Action,CriteriaStatus,Criteria,CritClearCalculate,
+   CritClearMax,CritClearTime,LastSolvedTime,LastUnsolvedTime)
+{
+"+12% load @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 38,28 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"23 MW S-LAA" 1,000000 "Load '5' '1'" "SET Load 148 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"23 MW Static Injection" 1,000000 "Load '5' '1'" "SET Load 102 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 1,000000 "Load '5' '1'" "SET Load 135 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 5,500000 "Load '5' '1'" "SET Load 115 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 10,500000 "Load '5' '1'" "SET Load 135 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 15,500000 "Load '5' '1'" "SET Load 115 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 21,000000 "Load '5' '1'" "SET Load 135 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 26,500000 "Load '5' '1'" "SET Load 115 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 32,000000 "Load '5' '1'" "SET Load 135 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 37,500000 "Load '5' '1'" "SET Load 115 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 43,000000 "Load '5' '1'" "SET Load 135 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"10 MW Alternating" 48,500000 "Load '5' '1'" "SET Load 115 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load evenly distributed" 1,000000 "Load '5' '1'" "CHANGEBY Load 12,76 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load evenly distributed" 1,000000 "Load '6' '1'" "CHANGEBY Load 12,76 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load evenly distributed" 1,000000 "Load '8' '1'" "CHANGEBY Load 12,76 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 5" 1,000000 "Load '5' '1'" "CHANGEBY Load 38,28 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+9.4 % @ 5" 1,000000 "Load '5' '1'" "CHANGEBY Load 30 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+9.4% @ 6" 1,000000 "Load '6' '1'" "CHANGEBY Load 30 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+9.4% @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 30 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+8% @ 5" 1,000000 "Load '5' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+8% @ 6" 1,000000 "Load '6' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+8% @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 6" 1,000000 "Load '6' '1'" "CHANGEBY Load 38,28 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.66@6 and 0.33@8" 1,000000 "Load '5' '1'" "CHANGEBY Load 0 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.66@6 and 0.33@8" 1,000000 "Load '6' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.66@6 and 0.33@8" 1,000000 "Load '8' '1'" "CHANGEBY Load 12,76 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.33@6 and 0.66@8" 1,000000 "Load '5' '1'" "CHANGEBY Load 0 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.33@6 and 0.66@8" 1,000000 "Load '6' '1'" "CHANGEBY Load 12,76 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.33@6 and 0.66@8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.1@6 and 0.9@8" 1,000000 "Load '5' '1'" "CHANGEBY Load 0 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.1@6 and 0.9@8" 1,000000 "Load '6' '1'" "CHANGEBY Load 3,19 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+12% load @ 0.1@6 and 0.9@8" 1,000000 "Load '8' '1'" "CHANGEBY Load 35,09 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=2 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=2 @ 8" 2,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=4 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=4 @ 8" 4,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=5 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=5 @ 8" 5,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=6 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=6 @ 8" 6,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=7 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=7 @ 8" 7,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=8 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=8 @ 8" 8,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=9 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=9 @ 8" 9,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=10 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=10 @ 8" 10,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=11 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=11 @ 8" 11,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=12 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=12 @ 8" 12,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=13 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=13 @ 8" 13,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=14 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=14 @ 8" 14,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=15 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=15 @ 8" 15,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=16 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=16 @ 8" 16,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=17 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=17 @ 8" 17,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=18 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=18 @ 8" 18,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=19 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=19 @ 8" 19,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=20 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=20 @ 8" 20,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=3 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=3 @ 8" 3,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=2 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=2 @ 8" 2,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=4 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=4 @ 8" 4,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=5 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=5 @ 8" 5,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=6 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=6 @ 8" 6,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=7 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=7 @ 8" 7,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=8 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=8 @ 8" 8,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=9 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=9 @ 8" 9,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=10 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=10 @ 8" 10,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=11 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=11 @ 8" 11,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=12 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=12 @ 8" 12,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=13 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=13 @ 8" 13,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=14 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=14 @ 8" 14,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=15 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=15 @ 8" 15,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=16 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=16 @ 8" 16,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=17 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=17 @ 8" 17,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=18 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=18 @ 8" 18,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=19 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=19 @ 8" 19,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=20 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"-+8% Load t=20 @ 8" 20,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=3 @ 8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+-8% Load t=3 @ 8" 3,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+2.8% - Static LCA" 1,000000 "Load '8' '1'" "CHANGEBY Load 8,932 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection--Alternating_v1_delta8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection--Alternating_v1_delta8" 9,000000 "Load '8' '1'" "CHANGEBY Load -51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection--Alternating_v1_delta8" 17,000000 "Load '8' '1'" "CHANGEBY Load 51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection--Alternating_v1_delta8" 25,000000 "Load '8' '1'" "CHANGEBY Load -51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection--Alternating_v1_delta8" 33,000000 "Load '8' '1'" "CHANGEBY Load 51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection--Alternating_v1_delta8" 41,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta16" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta16" 17,000000 "Load '8' '1'" "CHANGEBY Load -51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta16" 33,000000 "Load '8' '1'" "CHANGEBY Load 51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta16" 49,000000 "Load '8' '1'" "CHANGEBY Load -51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta16" 65,000000 "Load '8' '1'" "CHANGEBY Load 51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta16" 81,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta4" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta4" 5,000000 "Load '8' '1'" "CHANGEBY Load -51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta4" 9,000000 "Load '8' '1'" "CHANGEBY Load 51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta4" 13,000000 "Load '8' '1'" "CHANGEBY Load -51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta4" 17,000000 "Load '8' '1'" "CHANGEBY Load 51,04 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Injection-Alternating_v1_delta4" 21,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 17,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 33,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 49,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 65,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 81,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 97,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta16" 113,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 9,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 17,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 25,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 33,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 41,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 49,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta8" 57,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 1,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 5,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 9,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 13,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 17,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 21,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 25,000000 "Load '8' '1'" "CHANGEBY Load 25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"Load-Alternating-v1-delta4" 29,000000 "Load '8' '1'" "CHANGEBY Load -25,52 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+"+7% - Static LCA" 1,000000 "Load '8' '1'" "CHANGEBY Load 22,33 MW" "CHECK" "" "NO "  3,000 0,0000 0,0000 0,0000
+}
+
+//--------------------------------------------------------------------------------
+//Generator TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Gen, [TSSaveAll,TSSaveRotorAngle,TSSaveSpeed,TSSaveMWMech,TSSaveMW,TSSaveMvar,TSSaveVpu,TSSaveEfd,TSSaveExciterState,TSSaveMachineState,TSSaveGovernorState,TSSaveStabilizerState,TSSaveIfd,TSSaveVstab,TSSaveRotorAngleNoShift,TSSaveMWAccel,TSSaveVOEL,TSSaveVUEL,TSSavePrefCtrlState,TSSavePlantCtrlState,TSSaveAeroState,TSSaveAGCState,TSSaveIpu,TSSaveStatus,TSSaveRelayState,TSSaveVSCL,TSSaveVSCLOEL,TSSaveVSCLUEL,TSSaveUELState,TSSaveOELState,TSSaveSCLState,TSSavePowerAngle,TSSavePauxCtrlState,TSSaveMWGovernorRef,TSSaveVperHz], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+Gen (BusNum,ID,TSSaveAll,TSSaveRotorAngle,TSSaveSpeed,TSSaveMWMech,TSSaveMW,
+   TSSaveMvar,TSSaveVpu,TSSaveEfd,TSSaveExciterState,TSSaveMachineState,
+   TSSaveGovernorState,TSSaveStabilizerState,TSSaveIfd,TSSaveVstab,
+   TSSaveRotorAngleNoShift,TSSaveMWAccel,TSSaveVOEL,TSSaveVUEL,
+   TSSavePrefCtrlState,TSSavePlantCtrlState,TSSaveAeroState,TSSaveAGCState,
+   TSSaveIpu,TSSaveStatus,TSSaveRelayState,TSSaveVSCL,TSSaveVSCLOEL,
+   TSSaveVSCLUEL,TSSaveUELState,TSSaveOELState,TSSaveSCLState,TSSavePowerAngle,
+   TSSavePauxCtrlState,TSSaveMWGovernorRef,TSSaveVperHz)
+{
+     1 "1" "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " NO  "NO " "NO "
+     2 "1" "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " NO  "NO " "NO "
+     3 "1" "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " NO  "NO " "NO "
+}
+
+//--------------------------------------------------------------------------------
+//Bus TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Bus, [TSSaveAll,TSSaveVpu,TSSaveVangle,TSSaveFrequency,TSSaveGenMW,TSSaveGenMvar,TSSaveLoadMW,TSSaveLoadMvar,TSSaveVangleNoshift,TSSaveStatus,TSSaveROCOFHzperSecond,TSSaveBusState], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+Bus (Number,TSSaveAll,TSSaveVpu,TSSaveVangle,TSSaveFrequency,TSSaveGenMW,
+   TSSaveGenMvar,TSSaveLoadMW,TSSaveLoadMvar,TSSaveVangleNoshift,TSSaveStatus,
+   TSSaveROCOFHzperSecond,TSSaveBusState)
+{
+     1 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     2 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     3 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     4 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     5 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     6 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     7 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     8 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+     9 "YES" "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO " "NO "
+}
+
+//--------------------------------------------------------------------------------
+//Load TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Load, [TSSaveAll,TSSaveVpu,TSSaveVangle,TSSaveMW,TSSaveMvar,TSSaveIpu,TSSaveIangle,TSSaveLoadState,TSSaveRelayState,TSSaveDistEquivState,TSSaveStatus,TSSaveDistGenState,TSSaveDistMW,TSSaveDistMvar,TSSaveMWNominalTripped], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Switched Shunt TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Shunt, [TSSaveAll,TSSaveVpu,TSSaveMvarNom,TSSaveShuntState,TSSaveIpu,TSSaveStatus,TSSaveMvar], [NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Branch TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Branch, [TSSaveAll,TSSaveAppImpMagFrom,TSSaveAppImpAngleFrom,TSSaveAppImpRFrom,TSSaveAppImpXFrom,TSSaveAppImpMagTo,TSSaveAppImpAngleTo,TSSaveAppImpRTo,TSSaveAppImpXTo,TSSaveMWFrom,TSSaveMvarFrom,TSSaveMVAFrom,TSSaveCurrentFrom,TSSaveMWTo,TSSaveMvarTo,TSSaveMVATo,TSSaveCurrentTo,TSSavePercent,TSSaveRelayState,TSSaveStatus,TSSaveGICFrom,TSSaveGICTo,TSSaveMinProfileVpu], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Transformer TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Transformer, [TSSaveAll,TSSaveXFTap,TSSaveXFPhaseDeg,TSSaveXFGICIEffect,TSSaveXFGICQ,TSSaveXFGICINeutral], [NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Line Shunt TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(LineShunt, [TSSaveAll,TSSaveGinPU,TSSaveBinPU,TSSaveStatus,TSSaveLineShuntsState], [NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//DC Transmission Line TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(DCTransmissionLine, [TSSaveAll,TSSaveMWRect,TSSaveMvarRect,TSSaveMWInv,TSSaveMvarInv,TSSaveCurrent,TSSaveVdcRect,TSSaveVdcInv,TSSaveAlpha,TSSaveGamma,TSSaveDCLineState,TSSaveMode], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Voltage Source Converter DC Line TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(VSCDCLine, [TSSaveAll,TSSaveMWFrom,TSSaveMvarFrom,TSSaveMWTo,TSSaveMvarTo,TSSaveCurrent,TSSaveVdcFrom,TSSaveVdcTo,TSSaveVSCDCLineState], [NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Multi-Terminal DC Record TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(MTDCRecord, [TSSaveAll,TSSaveMWRect,TSSaveMvarRect,TSSaveMWInv,TSSaveMvarInv,TSSaveCurrent,TSSaveVdcMinRect,TSSaveVdcMinInv,TSSaveAlphaMin,TSSaveAlphaMax,TSSaveVControlStatus,TSSaveVpuMinRect,TSSaveVpuMinInv,TSSaveVControlBus,TSSaveMTDCLineState], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Multi-Terminal DC Converter TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(MTDCConverter, [TSSaveAll,TSSaveMW,TSSaveMvar,TSSaveVpu,TSSaveFiringAngle,TSSaveCurrent,TSSaveVdc,TSSaveDCConvState], [NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Area TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Area, [TSSaveAll,TSSaveGenMW,TSSaveGenMvar,TSSaveLoadMW,TSSaveLoadMvar,TSSaveGenMWAccel,TSSaveGenMWMech,TSSaveInterchangeMW,TSSaveInterchangeMvar,TSSaveAvgBusHz,TSSaveGICMvarLosses,TSSaveWeightAvgSpeed,TSSaveACEMW,TSSaveScheduledInterchangeMW,TSSaveLoadMWNominalTripped,TSSaveGenMWLoss], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Zone TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Zone, [TSSaveAll,TSSaveGenMW,TSSaveGenMvar,TSSaveLoadMW,TSSaveLoadMvar,TSSaveGenMWAccel,TSSaveGenMWMech,TSSaveInterchangeMW,TSSaveInterchangeMvar,TSSaveAvgBusHz,TSSaveWeightAvgSpeed,TSSaveLoadMWNominalTripped,TSSaveGenMWLoss], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Interface TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Interface, [TSSaveAll,TSSaveMW,TSSaveMvar,TSSaveMVA,TSSavePercent], [NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Bus Pair TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(BusPair, [TSSaveAll,TSSaveAngleDiff], [NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Injection Group TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(InjectionGroup, [TSSaveAll,TSSaveMW,TSSaveMvar,TSSaveMWMech,TSSaveLoadMWNominalTripped,TSSaveWeightedAverageRotorSpeed], [NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Substation TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(Substation, [TSSaveAll,TSSaveGenMW,TSSaveGenMvar,TSSaveLoadMW,TSSaveLoadMvar,TSSaveGenMWAccel,TSSaveGenMWMech,TSSaveVpuAverage,TSSaveVpuMin,TSSaveVpuMax,TSSaveFrequencyAverage,TSSaveGICMvar,TSSaveGICNeutralCurrent,TSSaveVpuMinHighestNomkV,TSSaveGICEFieldMagnitude,TSSaveGICEFieldDirection,TSSaveROCOFHzperSecond], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Case Information TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(PWCaseInformation, [TSSaveAll,TSSaveGenMW,TSSaveGenMvar,TSSaveLoadMW,TSSaveLoadMvar,TSSaveGenMWAccel,TSSaveGenMWMech,TSSaveDSMetric,TSSaveDSLoadMWUnserved,TSSaveGICTotalMvarLosses,TSSaveGICMaximumTransformerIeffectiveAmps], [NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Measurement Model TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(MeasurementModel, [TSSaveAll,TSSaveMeasurementObjectState], [NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Model Plane TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(ModelPlane, [TSSaveAll,TSSaveX,TSSaveY,TSSaveMeets], [NO, NO, NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+//Model Expression TRANSIENT STABILITY RESULTS TO SAVE
+//--------------------------------------------------------------------------------
+//Default All Values to NO
+SCRIPT
+{
+SetData(ModelExpression, [TSSaveAll,TSSaveResult], [NO, NO], All); // 
+}
+//--------------------------------------------------------------------------------
+// THE FOLLOWING ARE THE TRANSIENT STABILITY PLOT DEFINITIONS.
+//--------------------------------------------------------------------------------
+TSPlot (Name,AutoShow,AutoTileMode,TitleShow,TitleShowLogo,TitleLeftMemo,TitleRightMemo,
+   TitleLogoFilename,TitlePercHeight,TitlePercRightMemo,TitleLocation,
+   TitleFontSize,TitleFontBold,TitleFontColor,TitleBackgroundColor,
+   TitleShowDateTime,AutoSaveWhen,AutoSaveFileType,AutoSaveWidth,AutoSaveHeight,
+   AutoSaveFontScalar,AutoSaveIncCase,AutoSaveIncCategory,DataMaintainerAssign)
+{
+"Area_Avg Bus Hz" "Completion" "Down then Right" "NO " "YES" "" "" ""       15       50 "Bottom" 10 "YES" 0 16777215 "YES" "Never" "WMF" 800 600  1,000 "NO " "NO " ""
+}
+
+TSSubPlot (PlotName,Number,Visible,BackgroundColor,BackgroundColor2,AxisColor,GridLineColor,
+   BackgroundColorUse2,AdvOptFilename,LocLeft,LocRight,LocTop,LocBottom,
+   AxisObject,AxisField,AxisVisible,AxisGridVisible,AxisInverted,AxisLogarithmic,
+   AxisFontSize,AxisScaleInc,AxisScaleMinAuto,AxisScaleMinValue,
+   AxisScaleMinRound,AxisScaleMaxAuto,AxisScaleMaxValue,AxisScaleMaxRound,
+   AxisTitleVisible,AxisTitleCaption,AxisTitleFontSize,AxisTitleFontColor,
+   AxisTitleFontBold,TitleVisible,TitleCaption,TitleFontSize,TitleFontColor,
+   TitleFontBold,FooterVisible,FooterCaption,FooterFontSize,FooterFontColor,
+   FooterFontBold,LegendShow,LegendFontSize,LegendColor,ShowOnlyViolationOf)
+{
+"Area_Avg Bus Hz" 1 "YES" 16777215 16777215 0 12500670 "NO " "C:\Users\da-myr\Documents\Cyrec\Figures - Result\Static\powerworld\chart.tee"     0,00   100,00     0,00   100,00 "" "" "YES" "YES" "NO " "NO "       46     1,00 "NO "     0,00 "NO " "NO "    25,00 "NO " "YES" "Time (s)"       62       -1 "NO " "YES" ""       12        0 "NO " "YES" ""       12       -1 "NO " "No"       20 16777215 ""
+}
+
+TSPlotVertAxisGroup (PlotName,SubPlotNum,Number,Visible,GridVisible,Inverted,Logarithmic,Side,
+   FontSize,ScaleInc,ScaleMinAuto,ScaleMinAutoForceAbove,ScaleMinValue,
+   ScaleMinRound,ScaleMaxAuto,ScaleMaxAutoForceBelow,ScaleMaxValue,ScaleMaxRound,
+   TitleVisible,TitleCaption,TitleFontSize,TitleFontColor,TitleFontBold)
+{
+"Area_Avg Bus Hz" 1 1 "YES" "YES" "NO " "NO " "Left"       46     0,10 "NO " "NO "    49,40 "YES" "NO " "NO "    50,05 "YES" "YES" "Frequency (Hz)"       62       -1 "NO "
+}
+
+TSPlotSeries (PlotName,SubPlotNum,AxisGroupNum,Object,Field,Scale,Offset,ValueType,Style,
+   Visible,Color,Fade,LineThickness,LineDashed,LineStairs,LineSymbolEvery,
+   PointSymbol,PointWidth,PointHeight)
+{
+"Area_Avg Bus Hz" 1 1 "Area '1'" "TSAvgBusHz" 1 10 "Actual" "Line" "YES" 10968078 0        2 "Solid" "No"      100 "Circle"       20       20
+}
+
+
